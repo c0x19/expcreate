@@ -8,15 +8,15 @@
 也可以修改c语言代码中最后的sysem命令，删除掉或使用其他编辑器即可
 
 ## 安装
-- git clone https://github.com/c0x19/expcreate.git
-- cd expcreate
-- sudo ./install
+- `git clone https://github.com/c0x19/expcreate.git`
+- `cd expcreate`
+- `sudo ./install`
 
 ## 使用
 
 在题目目录下运行
 
-- exp
+- `exp`
 
 即可用subl打开exp.py
 
