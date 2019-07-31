@@ -9,7 +9,7 @@
 ## 安装
 - `git clone https://github.com/c0x19/expcreate.git`
 - `cd expcreate`
-- `sudo ./install`
+- `sudo ./install.sh`
 
 ## 使用
 
