@@ -4,8 +4,7 @@
 
 ## requirement
 
-需要安装sublime，安装教程网上有很多
-也可以修改c语言代码中最后的sysem命令，删除掉或使用其他编辑器即可
+需要安装sublime，安装教程网上有很多，也可以修改c语言代码中最后的system命令，删除掉或使用其他编辑器即可
 
 ## 安装
 - `git clone https://github.com/c0x19/expcreate.git`
