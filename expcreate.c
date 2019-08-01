@@ -12,7 +12,7 @@ int main(){
 	fputs("p = process('./pwn')\n", fp);
 	fputs("# p = remote('127.0.0.1', 7777)\n", fp);
 	fputs("libc_so = '/home/nik/pwn/libc.so.6'\n", fp);
-	fputs("elf = ELF('./pwn')\n\n", fp);
+	fputs("elf = ELF('./pwn')\n", fp);
 	fputs("# libc = ELF(libc_so)\n\n", fp);
 
 
