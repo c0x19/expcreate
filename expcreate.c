@@ -57,19 +57,19 @@ int main(){
 
 
 	fputs("# [+]heap\n", fp);
-	fputs("# def mycreate():\n", fp);
+	fputs("# def create():\n", fp);
 	fputs("# \tru('')\n", fp);
 	fputs("# \tsl('')\n\n", fp);
 
-	fputs("# def mydelete():\n", fp);
+	fputs("# def delete():\n", fp);
 	fputs("# \tru('')\n", fp);
 	fputs("# \tsl('')\n\n", fp);
 
-	fputs("# def myedit():\n", fp);
+	fputs("# def edit():\n", fp);
 	fputs("# \tru('')\n", fp);
 	fputs("# \tsl('')\n\n", fp);
 
-	fputs("# def myshow():\n", fp);
+	fputs("# def show():\n", fp);
 	fputs("# \tru('')\n", fp);
 	fputs("# \tsl('')\n", fp);
 	if(fp != NULL){
