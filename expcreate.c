@@ -25,11 +25,13 @@ int main(){
 	fputs("def ru(s):\n", fp);
 	fputs("\treturn p.recvuntil(s)\n\n", fp);
 
-	fputs("def rv(s):\n", fp);
-	fputs("\treturn p.recv(s)\n\n", fp);
+	fputs("def rv(s=null):\n", fp);
+	fputs("\tif s == null:\n", fp);
+	fputs("\t\treturn p.recv()\n", fp);
+	fputs("\telse:\n", fp);
+	fputs("\t\treturn p.recv(s)\n\n", fp);
 
-	fputs("def rv():\n", fp);
-	fputs("\treturn p.recv()\n\n", fp);
+
 
 	fputs("def getaddr64():\n", fp);
 	fputs("\treturn u64(rv(6).ljust(8, '\\x00'))\n\n", fp);
