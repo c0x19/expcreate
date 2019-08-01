@@ -57,21 +57,25 @@ int main(){
 
 
 	fputs("# [+]heap\n", fp);
-	fputs("# def create():\n", fp);
-	fputs("# \tru('')\n", fp);
-	fputs("# \tsl('')\n\n", fp);
+	fputs("# def create(n, s):\n", fp);
+	fputs("# \tsendlineafter('', '')\n", fp);
+	fputs("# \tsendlineafter('', '')\n", fp);
+	fputs("# \tsendlineafter('', '')\n\n", fp);
 
-	fputs("# def delete():\n", fp);
-	fputs("# \tru('')\n", fp);
-	fputs("# \tsl('')\n\n", fp);
 
-	fputs("# def edit():\n", fp);
-	fputs("# \tru('')\n", fp);
-	fputs("# \tsl('')\n\n", fp);
+	fputs("# def delete(n):\n", fp);
+	fputs("# \tsendlineafter('', '')\n", fp);
+	fputs("# \tsendlineafter('', str(n))\n\n", fp);
 
-	fputs("# def show():\n", fp);
-	fputs("# \tru('')\n", fp);
-	fputs("# \tsl('')\n", fp);
+	fputs("# def edit(n, s):\n", fp);
+	fputs("# \tsendlineafter('', '')\n", fp);
+	fputs("# \tsendlineafter('', str(n))\n", fp);
+	fputs("# \tsendlineafter('', s)\n\n", fp);
+
+
+	fputs("# def show(n):\n", fp);
+	fputs("# \tsendlineafter('', '')\n", fp);
+	fputs("# \tsendlineafter('', str(n))\n\n", fp);
 	if(fp != NULL){
 		fclose(fp);
 	}
