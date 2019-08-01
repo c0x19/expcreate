@@ -13,18 +13,23 @@ int main(){
 	fputs("# p = remote('127.0.0.1', 7777)\n", fp);
 	fputs("libc_so = '/home/nik/pwn/libc.so.6'\n", fp);
 	fputs("elf = ELF('./pwn')\n\n", fp);
+	fputs("# libc = ELF(libc_so)\n\n", fp);
+
 
 	fputs("# context.log_level = 'debug'\n", fp);
 	fputs("# gdb.attach(p)\n\n", fp);
 
 	fputs("def sl(s):\n", fp);
-	fputs("\tp.sendline(s)\n\n", fp);
+	fputs("\treturn p.sendline(s)\n\n", fp);
 
 	fputs("def ru(s):\n", fp);
-	fputs("\tp.recvuntil(s)\n\n", fp);
+	fputs("\treturn p.recvuntil(s)\n\n", fp);
 
 	fputs("def rv(s):\n", fp);
-	fputs("\tp.recv(s)\n\n", fp);
+	fputs("\treturn p.recv(s)\n\n", fp);
+
+	fputs("def rv():\n", fp);
+	fputs("\treturn p.recv()\n\n", fp);
 
 	fputs("def getaddr64():\n", fp);
 	fputs("\treturn u64(rv(6).ljust(8, '\\x00'))\n\n", fp);
@@ -51,9 +56,9 @@ int main(){
 	fputs("# bin_sh_offset = libc.dump('str_bin_sh') \n\n", fp);
 
 	fputs("# [+]libc_base\n", fp);
-	fputs("# elf.address = libc_base\n", fp);
-	fputs("# system = elf.symbols['system']\n", fp);
-	fputs("# bin_sh = elf.search('/bin/sh').next() \n\n", fp);
+	fputs("# libc.address = libc_base\n", fp);
+	fputs("# system = libc.symbols['system']\n", fp);
+	fputs("# bin_sh = libc.search('/bin/sh').next() \n\n", fp);
 
 
 	fputs("# [+]heap\n", fp);
