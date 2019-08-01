@@ -2,7 +2,7 @@
 #include<stdio.h>
 
 int main(){
-	FILE *fp = fopen("exp.py", "w");
+	FILE *fp = fopen("exp.py", "a+");
 	if(fp == NULL){
 		printf("[-]open file error\n");
 		return 0;
