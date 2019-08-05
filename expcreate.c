@@ -8,7 +8,7 @@ int main(){
 		return 0;
 	}
 	fputs("from pwn import *\n", fp);
-	fputs("# from LibcSearch import *\n\n", fp);
+	fputs("# from LibcSearcher import *\n\n", fp);
 	fputs("p = process('./pwn')\n", fp);
 	fputs("# p = remote('127.0.0.1', 7777)\n", fp);
 	fputs("libc_so = '/home/nik/pwn/libc.so.6'\n", fp);
@@ -17,7 +17,7 @@ int main(){
 
 
 	fputs("# context.log_level = 'debug'\n", fp);
-	fputs("# gdb.attach(p)\n\n", fp);
+	fputs("# gdb.attach(p, 'b *0x')\n\n", fp);
 
 	fputs("def sl(s):\n", fp);
 	fputs("\treturn p.sendline(s)\n\n", fp);
@@ -37,7 +37,7 @@ int main(){
 	fputs("\treturn u64(rv(6).ljust(8, '\\x00'))\n\n", fp);
 
 	fputs("def getaddr32():\n", fp);
-	fputs("\treturn u32(rv(4))\n\n", fp);
+	fputs("\treturn u32(rv(4))\n\n\n\n\n", fp);
 
 
 	fputs("p.interactive()\n\n", fp);
@@ -54,8 +54,9 @@ int main(){
 
 	fputs("# [+]libcsearch\n", fp);
 	fputs("# libc = LibcSearcher('__libc_start_main', libc_start_main) # the 2nd para is like d90\n", fp);
-	fputs("# system_offset = libc.dump('system')\n", fp);
-	fputs("# bin_sh_offset = libc.dump('str_bin_sh') \n\n", fp);
+	fputs("# libc_base = libc_start_main - libc.dump('__libc_start_main')\n", fp);
+	fputs("# system = libc_base + libc.dump('system')\n", fp);
+	fputs("# bin_sh = libc_base + libc.dump('str_bin_sh') \n\n", fp);
 
 	fputs("# [+]libc_base\n", fp);
 	fputs("# libc.address = libc_base\n", fp);
@@ -65,24 +66,24 @@ int main(){
 
 	fputs("# [+]heap\n", fp);
 	fputs("# def create(n, s):\n", fp);
-	fputs("# \tsendlineafter(':', '')\n", fp);
-	fputs("# \tsendlineafter(':', str(n))\n", fp);
-	fputs("# \tsendlineafter(':', s)\n\n", fp);
+	fputs("# \tp.sendlineafter(':', '')\n", fp);
+	fputs("# \tp.sendlineafter(':', str(n))\n", fp);
+	fputs("# \tp.sendlineafter(':', s)\n\n", fp);
 
 
 	fputs("# def delete(n):\n", fp);
-	fputs("# \tsendlineafter(':', '')\n", fp);
-	fputs("# \tsendlineafter(':', str(n))\n\n", fp);
+	fputs("# \tp.sendlineafter(':', '')\n", fp);
+	fputs("# \tp.sendlineafter(':', str(n))\n\n", fp);
 
 	fputs("# def edit(n, s):\n", fp);
-	fputs("# \tsendlineafter(':', '')\n", fp);
-	fputs("# \tsendlineafter(':', str(n))\n", fp);
-	fputs("# \tsendlineafter(':', s)\n\n", fp);
+	fputs("# \tp.sendlineafter(':', '')\n", fp);
+	fputs("# \tp.sendlineafter(':', str(n))\n", fp);
+	fputs("# \tp.sendlineafter(':', s)\n\n", fp);
 
 
 	fputs("# def show(n):\n", fp);
-	fputs("# \tsendlineafter(':', '')\n", fp);
-	fputs("# \tsendlineafter(':', str(n))\n\n", fp);
+	fputs("# \tp.sendlineafter(':', '')\n", fp);
+	fputs("# \tp.sendlineafter(':', str(n))\n\n", fp);
 	if(fp != NULL){
 		fclose(fp);
 	}
